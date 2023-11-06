@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: sample-gab-be.dockerfile
+      args:
+        - PIPENV_PYPI_MIRROR=${PIPENV_PYPI_MIRROR}
+    environment:
+      - PIPENV_PYPI_MIRROR=${PIPENV_PYPI_MIRROR}
+    env_file: .env
+    ports:
+      - 80:80
+      - 5000:5000
