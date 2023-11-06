@@ -1,5 +1,6 @@
 from dataclasses import asdict
 from http import HTTPStatus
+from fgi.sqlalchemy import patch_model
 
 from flask import Response
 
