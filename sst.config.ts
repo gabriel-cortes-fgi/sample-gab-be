@@ -1,12 +1,13 @@
 import { SSTConfig } from "sst";
 import { IAM } from "./stacks/iam";
 import { API } from "./stacks/api";
+import { AWS_REGION } from "./stacks/constants";
 
 export default {
   config(_input) {
     return {
       name: "sample-gab-be",
-      region: "us-east-1",
+      region: AWS_REGION,
     };
   },
   stacks(app) {
