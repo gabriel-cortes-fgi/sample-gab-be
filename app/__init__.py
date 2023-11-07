@@ -20,6 +20,7 @@ def create_app() -> Flask:
             r'^https://localhost:(\d){1,5}$',
             r'^http://localhost:(\d){1,5}$',
             'https://webservice-files.s3.amazonaws.com/',
+            r'^https:\/\/([A-Za-z0-9\-\.]+)\.app\.focusglobalinc\.com$',
         ],
     )
 

@@ -17,7 +17,7 @@ export function API({ app, stack }: StackContext) {
   const imageIdentifier = `${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/sample-gab-be:${stack.stage}`;
   const accessRoleArn = `arn:aws:iam::${AWS_ACCOUNT}:role/service-role/AppRunnerECRAccessRole`;
   const serviceName = `sample-gab-be-${stack.stage}`;
-  const secret = stack.stage === "prod" ? SECRET_ARN_PROD : SECRET_ARN_UAT;
+  const secret = stack.stage === "production" ? SECRET_ARN_PROD : SECRET_ARN_UAT;
 
   const api = new apprunner.CfnService(stack, "sample-gab-be", {
     sourceConfiguration: {

@@ -1,10 +1,16 @@
-# # Ref: https://gallery.ecr.aws/docker/library/python
+# Ref: https://gallery.ecr.aws/docker/library/python
 FROM public.ecr.aws/docker/library/python:3.10-slim-buster
 ENV PORT=5000
 
 ADD https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_amd64.tar.gz .
 RUN tar -xzf yq_linux_amd64.tar.gz
 RUN mv yq_linux_amd64 /usr/bin/yq
+# RUN apt-get update && apt-get install -y curl
+# RUN apt-get update && apt-get install -y unzip
+# RUN apt-get update && apt-get install -y zip
+# COPY app/scripts/aws-ca-auth.sh ./app/scripts/aws-ca-auth.sh
+# RUN chmod +x ./app/scripts/aws-ca-auth.sh
+# RUN ./app/scripts/aws-ca-auth.sh
 RUN pip install pipenv
 ARG PIPENV_PYPI_MIRROR
 RUN pip config set global.index-url $PIPENV_PYPI_MIRROR
