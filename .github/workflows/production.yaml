@@ -26,7 +26,7 @@ jobs:
         run: npm install
       - name: Deploy Stack
         run: |
-          npx sst deploy --stage prod
+          npx sst deploy --stage production
   publish:
     name: Publish Docker Image
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
             "PIPENV_PYPI_MIRROR=${{ steps.code-artifact-login.outputs.pypi-mirror }}"
           tags: |
             ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-            ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:prod
+            ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:production
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           provenance: false
