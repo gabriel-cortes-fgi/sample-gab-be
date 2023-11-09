@@ -23,6 +23,7 @@ def create_app() -> Flask:
             r'^https:\/\/([A-Za-z0-9\-\.]+)\.app\.focusglobalinc\.com$',
             r'^https:\/\/([A-Za-z0-9\-\.]+)\.ap-southeast-1\
                 .awsapprunner\.com$',
+            r'^https:\/\/([A-Za-z0-9\-\.]+)\.cloudfront\.net$',
         ],
     )
 
